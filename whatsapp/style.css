@@ -1,0 +1,397 @@
+:root {
+    --leftside-color: rgb(240, 240, 240);
+    --middle-side-color: #fff;
+    --icons-color: grey;
+    --list-head-color: black;
+    --hover-color: rgb(233, 233, 233);
+    --time-color: grey;
+    --default-background-hover: #f5f6f6;
+    --chat-background-color: #efeae2;
+    --sender-msg: #d9fdd3;
+    --receiver-msg: #fff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(#009688 0%, #009688 130px, #d9dbd5 130px, #d9dbd5 100%);
+    min-height: 100vh;
+}
+
+.container {
+    position: relative;
+    width: 1696px;
+    max-width: 100%;
+    height: calc(100vh - 40px);
+    background: #fff;
+    box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.1), 0px 2px 5px 0px rgba(0, 0, 0, 0.1);
+    display: flex;
+}
+
+.left_side {
+    width: 4%;
+    background-color: #f0f2f5;
+}
+
+.middle_side {
+    width: 30%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.right_side {
+    width: 66%;
+    background-color: var(--leftside-color);
+}
+
+.left_side .left_side__icons {
+    font-size: 22px;
+    text-align: center;
+    color: var();
+    list-style-type: none;
+    color: var(--icons-color);
+}
+
+.left_side .left_side__icons ul {
+    list-style-type: none;
+    cursor: pointer;
+}
+
+.left_side .left_side__icons ul li {
+    margin: 25px 0px;
+}
+
+.left_side .left_side__icons .icons_bottom {
+    position: absolute;
+    bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 0px 13px;
+   
+}
+
+.left_side .left_side__icons .icons_bottom .icons_profile__image {
+    width: 40px;
+    height: 40px;
+    border-radius: 30px;
+}
+
+.chat_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 26px;
+    height: 45px;
+}
+
+.chat_header h1 {
+    font-size: 22px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.chat_header .chat_header__icons {
+    font-size: 20px;
+    color: var(--icons-color);
+}
+
+.chat_header .chat_header__icons i {
+    padding: 16px;
+}
+
+.search_bar {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 10px;
+    height: 45px;
+    background-color: var(--middle-side-color);
+}
+
+.search_bar div {
+    position: relative;
+    width: 100%;
+}
+
+.search_bar div input {
+    background-color: #f0f2f5;
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 6px;
+    height: 38px;
+    border-radius: 10px;
+    font-size: 14px;
+    padding-left: 70px;
+}
+
+.search_bar div i {
+    color: var(--icons-color);
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    padding-left: 10px;
+    transform: translateY(-50%);
+}
+
+.message_info .groups {
+    display: flex;
+    margin: 2px 14px;
+}
+
+.groups p {
+    border-radius: 18px;
+    border: none;
+    background-color: #f1f2f3;
+    color: var(--icons-color);
+    padding: 10px;
+    margin: 4px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.groups p:hover {
+    background-color: #e7e9ec;
+}
+
+.chat_list {
+    height: calc(100vh - 212px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-color: var(--middle-side-color);
+    scrollbar-width: thin;
+    scrollbar-color: rgba(11, 20, 26, .2) transparent;
+}
+
+.block {
+    width: 99%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.block:hover {
+    background-color: var(--default-background-hover);
+}
+
+.image_box {
+    padding: 12px 15px 8px 15px;
+}
+
+.image_box img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.details {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 8px 8px 8px 0px;
+    width: 100%;
+    height: 100%;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.details .list_header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.details .list_header h1 {
+    font-size: 18px;
+    font-weight: 10;
+    color: var(--list-head-color);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.details .list_header .time {
+    color: var(--time-color);
+    font-weight: 10;
+    font-size: 15px;
+}
+
+.message p {
+    color: var(--time-color);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.footer {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.footer i {
+    margin-bottom: 7px;
+    margin-right: 5px;
+}
+
+.footer p {
+    font-size: 12px;
+    color: var(--time-color);
+}
+
+.footer .color-change {
+    color: rgba(2, 126, 181, 1);
+    font-size: 12px;
+}
+
+.right_side {
+    background-image: url(./images/backgroundimage.png);
+}
+
+.right_side .header {
+    height: 60px;
+    /* background-color: red; */
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 15px 8px 15px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    background-color: var(--leftside-color);
+}
+
+.right_side .header .header_profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.right_side .header .header_profile img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}
+
+.right_side .header .header_profile p {
+    font-size: 18px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.right_side .header .icons {
+    display: flex;
+    gap: 40px;
+    margin-right: 20px;
+}
+
+.right_side .messages {
+    /* background-color: red; */
+    height: calc(100% - 120px);
+    padding: 20px 70px 20px 70px;
+    display: block;
+}
+
+
+
+/* .right_side .messages .my_messages {
+    padding: 10px 7px;
+    border-radius: 8px;
+    width: fit-content;
+    background-color: white;
+}
+
+.right_side .messages .friend_messages {
+    padding: 10px 7px;
+    border-radius: 8px;
+    width: fit-content;
+    background-color: rgb(183, 255, 183);
+    flex-direction: row-reverse;
+} */
+
+.right_side .messages .my-messages{
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.right_side .messages .my-messages .message-detail {
+    display: flex;
+    justify-content: space-between;
+    width: fit-content;
+    background-color: white;
+    column-gap: 10px;
+    padding: 8px 7px;
+    border-radius: 8px;
+}
+
+.right_side .messages .my-messages .message-detail .messsage-time {
+    position: relative;
+    top: 8px;
+    font-size: 12px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: var(--icons-color);
+}
+
+.right_side .messages .my-messages .message-detail .messsage-content {
+    color: var(--list-head-color);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.right_side .messages .friend-messages{
+    display: flex;
+    width: 100%;
+    margin-bottom: 5px;
+    flex-direction: row-reverse;
+}
+
+.right_side .messages .friend-messages .message-detail {
+    display: flex;
+    justify-content: space-between;
+    width: fit-content;
+    background-color: rgb(183, 255, 183);
+    column-gap: 10px;
+    padding: 8px 7px;
+    border-radius: 8px;
+}
+
+.right_side .messages .friend-messages .message-detail .messsage-time {
+    position: relative;
+    top: 8px;
+    font-size: 12px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: var(--icons-color);
+}
+
+.right_side .messages .friend-messages .message-detail .messsage-content {
+    color: var(--list-head-color);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.right_side .right_footer {
+    height: 60px;
+    background-color: var(--leftside-color);
+    display: flex;
+    align-items: center;
+    padding: 10px 25px 10px 25px;
+    justify-content: space-between;
+}
+
+
+.right_side .right_footer i {
+    font-size: 24px;
+    color: var(--time-color);
+    cursor: pointer;
+}
+
+.right_side .right_footer #footerInput {
+    width:90%;
+    padding: 14px;
+    border-radius: 10px; 
+    border: none;
+    outline: none;
+    color: var(--time-color);
+    font-size: 16px;
+}
